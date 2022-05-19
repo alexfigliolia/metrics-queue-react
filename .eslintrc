@@ -1,0 +1,67 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "eslint-config-airbnb-base/rules/es6",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "react", "import", "jest", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "import/no-unresolved": "error",
+    "import/no-default-export": "error",
+    "no-undef": 2,
+    "no-dupe-keys": 2,
+    "import/named": 2,
+    "import/no-cycle": 2,
+    "import/no-duplicates": 2,
+    "prefer-destructuring": 0,
+    "class-methods-use-this": 0,
+    "constructor-super": 0,
+    "prefer-spread": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "react/jsx-max-props-per-line": [1, { "maximum": 2, "when": "multiline" }],
+    "jest/expect-expect": [
+      "error",
+      {
+        "assertFunctionNames": ["expect", "waitFor"],
+        "additionalTestBlockFunctions": []
+      }
+    ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true, 
+        "project": "./tsconfig.json"
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "jest/globals": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "globals": {
+    "JSX":"readonly"
+  }
+}

@@ -1,4 +1,4 @@
-# Metrics Queue
+# Metrics Queue React
 
 This library exposes some React utilities that make common [Metrics Queue](https://github.com/alexfigliolia/metrics-queue#readme) operations easy and reuseable.
 

@@ -4022,10 +4022,10 @@ merge2@^1.3.0, merge2@^1.4.1:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-metrics-queue@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/metrics-queue/-/metrics-queue-1.0.3.tgz#0107d09ffe9468c2f46f20ece52b3a4da8dabd5d"
-  integrity sha512-0dDROq1dradbJsxdQY/8XfDn+w1Km0eiFnV88Q0XDI0zeNSzUsaeHVKZmZyn6TAUyIwkx9Pi5T6e0+yVS7Ifnw==
+metrics-queue@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/metrics-queue/-/metrics-queue-1.0.4.tgz#2cadfd26935e47d514b7904fe248eb8d4df1f8fc"
+  integrity sha512-GkyG3oYb1tP637by5jSUiC7ZHSc5bZFy66c4sFnpvcBQQ3WrwB0JO9GQz18/NRTUlkmneIK3tEWBMw13H1EsGA==
   dependencies:
     "@babel/runtime" "^7.17.9"
 

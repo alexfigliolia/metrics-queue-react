@@ -1,6 +1,6 @@
 {
   "name": "metrics-queue-react",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "React utilities for seemless integration with the MetricsQueue",
   "main": "lib/metrics-queue-react.js",
   "unpkg": "dist/metrics-queue-react.js",
@@ -98,11 +98,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "metrics-queue": "^1.0.3",
+    "metrics-queue": "^1.0.4",
     "react": "^18.1.0"
   },
   "peerDependencies": {
-    "metrics-queue": "^1.0.3",
+    "metrics-queue": "^1.0.4",
     "react": "^16.8.0"
   },
   "browserslist": [

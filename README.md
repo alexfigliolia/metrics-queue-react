@@ -6,7 +6,7 @@ This library exposes some React utilities that make common [Metrics Queue](https
 
 ```bash
 yarn add metrics-queue metrics-queue/react
-# or 
+# or
 bolt add metrics-queue metrics-queue/react
 # or
 npm i -S metrics-queue metrics-queue/react
@@ -143,7 +143,7 @@ const MakePerformanceMeasure = () => {
   return (
       <MetricProvider
         type="measure"
-        event="feature-interactive" 
+        event="feature-interactive"
         startOrMeasureOptions="feature-first-paint" />
   );
 }
@@ -171,7 +171,7 @@ const MakeCustomPerfLibMetric = () => {
   return (
       <MetricProvider
         type="plugin"
-        event="example-metric" 
+        event="example-metric"
         metric={metric}
         metricStop={() => metric.stop()} />
   );
@@ -182,7 +182,7 @@ Under the hood, the `MetricProvider` in the above example will call:
 
 ```JavaScript
 // Mark the stoptime of the metric
-metric.stop() 
+metric.stop()
 MetricsQueue.plugins["your-plugin-name"]("example-metric", metric);
 // This will execute all event listeners on "example-metric"
 ```

@@ -30,6 +30,10 @@ For a more in-depth set configuration options please head over to the `MetricsQu
 Conditionally render based on the status of a performance metric:
 
 ```JavaScript
+// Somewhere in your application code:
+performance.mark("first-render");
+
+// In your UI modules:
 import { MetricSubscriber } from "metrics-queue/react";
 import { AsyncComponent } from "./your/async/component"
 
@@ -44,7 +48,7 @@ export const AwesomeComponent = () => (
 );
 ```
 
-In the use case above, `AsyncComponent` is an expensive-to-render component or an asynchronous import that resolves to a component. But really, it can be any secondary experience that can be deferred until after the `"first-render"` mark.
+In the use case above, `AsyncComponent` can be any expensive-to-render component or asynchronous import that resolves to a component. It can also be any secondary experience that can be deferred until after the `"first-render"` mark.
 
 ### useMetricSubscription
 
@@ -56,7 +60,7 @@ import { useMetricSubscription } from "metrics-queue/react";
 export const AwesomeComponent = () => {
   const eventReached = useMetricSubscription("your_mark_or_measure");
 
-  if(!eventReached) return null; // Or a loader, or whatever makes you happy today
+  if(!eventReached) return null; // Or a spinner, or whatever makes you happy today
 
   return <SomeExpensiveOrAsyncComponent />
 }
@@ -75,7 +79,7 @@ export const AwesomeComponent = () => {
     }
   );
 
-  if(!eventReached) return null; // Or a loader, or whatever makes you happy today
+  if(!eventReached) return null; // Or a spinner, or whatever makes you happy today
 
   return <SomeExpensiveOrAsyncComponent />
 }
@@ -145,7 +149,7 @@ const MakePerformanceMeasure = () => {
 }
 ```
 
-The `MetricProvider`'s above will call:
+The `MetricProviders` above will call:
 
 ```JavaScript
 performance.mark("feature-first-paint");
@@ -155,7 +159,7 @@ performance.measure("feature-interactive", "feature-first-paint");
 
 as soon as they mount.
 
-#### Usage with `MetricsQueue` plugins
+#### MetricProviders with `MetricsQueue` plugins
 
 ```JavaScript
 import { MetricProvider } from "metrics-queue/react"
@@ -174,16 +178,16 @@ const MakeCustomPerfLibMetric = () => {
 }
 ```
 
-The Provider in the above example will call:
+Under the hood, the `MetricProvider` in the above example will call:
 
 ```JavaScript
 // Mark the stoptime of the metric
 metric.stop() 
-// Calling all event listeners and subscribers on "example-metric"
 MetricsQueue.plugins["your-plugin-name"]("example-metric", metric);
+// This will execute all event listeners on "example-metric"
 ```
 
-as soon as it mounts.
+as soon as it mounts. It will also automatically events on the correct plugin without you having to specify `"your-plugin-name"` as a prop.
 
 ## Contributing
 

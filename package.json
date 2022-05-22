@@ -35,9 +35,19 @@
     "url": "git+https://github.com/alexfigliolia/metrics-queue-react.git"
   },
   "keywords": [
+    "task",
+    "mark",
+    "react",
+    "measure",
+    "event",
+    "emitter",
+    "metric",
+    "priority",
+    "listeners",
+    "subscribe",
+    "pubsub",
     "performance",
-    "performance API",
-    "react"
+    "performance API"
   ],
   "author": "Alex Figliolia",
   "license": "MIT",

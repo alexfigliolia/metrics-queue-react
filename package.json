@@ -1,6 +1,6 @@
 {
   "name": "metrics-queue-react",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React utilities for seemless integration with the MetricsQueue",
   "main": "lib/metrics-queue-react.js",
   "unpkg": "dist/metrics-queue-react.js",
@@ -109,7 +109,7 @@
   "browserslist": [
     "defaults"
   ],
-  "npmName": "metrics-queue/react",
+  "npmName": "metrics-queue-react",
   "npmFileMap": [
     {
       "basePath": "/dist/",

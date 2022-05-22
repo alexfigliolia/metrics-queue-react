@@ -5,11 +5,11 @@ This library exposes some React utilities that make common [Metrics Queue](https
 ## Installation
 
 ```bash
-yarn add metrics-queue metrics-queue/react
+yarn add metrics-queue metrics-queue-react
 # or
-bolt add metrics-queue metrics-queue/react
+bolt add metrics-queue metrics-queue-react
 # or
-npm i -S metrics-queue metrics-queue/react
+npm i -S metrics-queue metrics-queue-react
 ```
 
 Initialize the `MetricsQueue` to enable subscribing to performance marks and measures:
@@ -34,7 +34,7 @@ Conditionally render based on the status of a performance metric:
 performance.mark("first-render");
 
 // In your UI modules:
-import { MetricSubscriber } from "metrics-queue/react";
+import { MetricSubscriber } from "metrics-queue-react";
 import { AsyncComponent } from "./your/async/component"
 
 export const AwesomeComponent = () => (
@@ -55,7 +55,7 @@ In the use case above, `AsyncComponent` can be any expensive-to-render component
 For a more minimal approach, this package also exposed a hook:
 
 ```JavaScript
-import { useMetricSubscription } from "metrics-queue/react";
+import { useMetricSubscription } from "metrics-queue-react";
 
 export const AwesomeComponent = () => {
   const eventReached = useMetricSubscription("your_mark_or_measure");
@@ -69,7 +69,7 @@ export const AwesomeComponent = () => {
 The `useMetricSubscription` hook can receive an optional callback to execute once `"your_mark_or_measure"` is reached:
 
 ```JavaScript
-import { useMetricSubscription } from "metrics-queue/react";
+import { useMetricSubscription } from "metrics-queue-react";
 
 export const AwesomeComponent = () => {
   const eventReached = useMetricSubscription(
@@ -91,7 +91,7 @@ Similar to `useMetricSubscription`, this hook is designed to resolve asynchronou
 
 ```JavaScript
 import React from "react";
-import { useMetricSubscriptionModule } from "metrics-queue/react";
+import { useMetricSubscriptionModule } from "metrics-queue-react";
 import Spinner from "ui-library";
 
 // Define an async function that returns a Component
@@ -129,7 +129,7 @@ performance.measure("example-measure");
 However, if you'd like to use something a little more React-flavored, this package has some Providers that you can place in your react tree. The `MetricProvider` will make a call to the Performance API as soon as it mounts:
 
 ```JavaScript
-import { MetricProvider } from "metrics-queue/react";
+import { MetricProvider } from "metrics-queue-react";
 
 const MakePerformanceMark = () => {
   return (
@@ -162,7 +162,7 @@ as soon as they mount.
 #### MetricProviders with `MetricsQueue` plugins
 
 ```JavaScript
-import { MetricProvider } from "metrics-queue/react"
+import { MetricProvider } from "metrics-queue-react"
 import { createPerfMetric } from "example-perf-lib";
 
 const metric = createPerfMetric("example-metric");

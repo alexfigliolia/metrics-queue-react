@@ -52,7 +52,7 @@ In the use case above, `AsyncComponent` can be any expensive-to-render component
 
 ### useMetricSubscription
 
-For a more minimal approach, this package also exposed a hook:
+For a more minimal approach, this package also exposes a hook:
 
 ```JavaScript
 import { useMetricSubscription } from "metrics-queue-react";
@@ -187,7 +187,7 @@ MetricsQueue.plugins["your-plugin-name"]("example-metric", metric);
 // This will execute all event listeners on "example-metric"
 ```
 
-as soon as it mounts. It will also automatically events on the correct plugin without you having to specify `"your-plugin-name"` as a prop.
+as soon as it mounts. It will also automatically emit events on the correct plugin without you having to specify `"your-plugin-name"` as a prop.
 
 ## Contributing
 
